@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deadlock Synchronisation</title>
+    <!-- icons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="/img/fav-icon.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div class="nav">
+            <div class="one">
+                <a href="index.html" class="logo">---Deadlock <span> Synchronisation---</span></a>
+            </div>
+        </div>
+    </header>
+    <br><br><br><br><br><br>
+    <br><br>
+    <h1>Introduction of Deadlock in Operating System</h1><br>
+    <p dir="ltr"><span>Every process needs some resources to complete its execution. However, the resource is granted in a sequential order. </span></p>
+    <ol>
+        <li> 1&gt; The process requests for some resource.</li>
+        <li> 2&gt; OS grant the resource if it is available otherwise let the process waits.</li>
+        <li> 3&gt; The process uses it and release on the completion.</li>
+    </ol>
+    <p>A <b>DeadLock</b> is a situation where each of the computer process waits for a resource which is being assigned to some another process. In this situation, none of the process gets executed since the resource it needs, is held by some other process which is also waiting for some other resource to be released.</p>
+    <p>Let us assume that there are three processes P1, P2 and P3. There are three different resources R1, R2 and R3. R1 is assigned to P1, R2 is assigned to P2 and R3 is assigned to P3. </p>
+    <p>After some time, P1 demands for R1 which is being used by P2. P1 halts its execution since it can't complete without R2. P2 also demands for R3 which is being used by P3. P2 also stops its execution because it can't continue without R3. P3 also demands for R1 which is being used by P1 therefore P3 also stops its execution. </p>
+    <p>In this scenario, a cycle is being formed among the three processes. None of the process is progressing and they are all waiting. The computer becomes unresponsive since all the processes got blocked.</p>
+
+    <img src="./deadlock.png" alt="os Deadlock"><br><br>
+
+    <h2>For Example:</h2>
+    <p dir="ltr"><span>Consider an example when two trains are coming toward each other on the same track and there is only one track, none of the trains can move once they are in front of each other. A similar situation occurs in operating systems when there are two or more processes that hold some resources and wait for resources held by other(s). For example, in the below diagram, Process 1 is holding Resource 1 and waiting for resource 2 which is acquired by process 2, and process 2 is waiting for resource 1. </span></p>
+    <div style="text-align:center;margin:20px 0;max-height: 280px;" id="GFG_AD_gfg_outstream_incontent"></div>
+    <p dir="ltr" style="text-align: center"><img alt="deadlock" height="inherit" src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/gq/2015/06/deadlock.png" width="inherit"></p><div id="_GFG_ABP_Incontent_728x90" style="text-align:center;"></div>
+
+    <br><br><br><br>
+    <h2 class="center"><b>*** Algorithms in Deadlock ***</b></h2><br>
+
+    <div class="game-content">
+        <!-- box1  -->
+        <div class="game-box">
+            <img src="pc1.webp" alt="" class="game-img-1">
+            <div class="gametext">
+                <h3 class="gametext-heading">Producer and Consumer</h3>
+                <p>
+                    It is a classical multi-process synchronisation problem. There is one producer and one consumer. Producer is producing some items until buffer is full, whereas consumer consumes the item until buffer is empty. They share same memory buffer which is of fixed size. But both cannot access the memory buffer at the same time.
+                </p>
+                <a href="p&amp;c.html" class="gamebtn">Get-Started</a>
+            </div>
+        </div>
+
+        <!-- box2  -->
+        <div class="game-box">
+            <img src="bank.jpeg" alt="" class="game-img-1">
+            <div class="gametext">
+                <h2 class="gametext-heading">Banker's Algorithm</h2>
+                <p>The banker's algorithm is a resource allocation algorithm and deadlock avoidance algorithm that tests for safety by simulating the alocation for predetermined maximum possible amounts of all resources and making decision whether allocation should be allowed or not.
+                </p>
+                <a href="Bankers.html" class="gamebtn">Get-Started</a>
+            </div>
+        </div>
+
+        <!-- box3  -->
+        <div class="game-box">
+            <img src="table01.avif" alt="" class="game-img-1">
+            <div class="gametext">
+                <h2 class="gametext-heading">Dining Philosopher's problem</h2>
+                <p>
+                    There are 5 philosophers sharing a circular table and they eat and think alternatively. There is a bowl of rice for each philosophers and 5 chopsticks. A philosopher needs both their right and left chopstick to eat. A philosopher may eat if there are both chopsticks available else puts down their chopstick and begin thinking again.
+                </p>
+                <a href="dining_philosophers.html" class="gamebtn">Get-Started</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__content"><span>© 2024 • <a href="https://github.com/sarthakkarora">Sarthak Arora</a> •
+                    <a href="https://github.com/sarthakkarora" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss">
+                            <path d="M4 11a9 9 0 019 9"></path>
+                            <path d="M4 4a16 16 0 0116 16"></path>
+                            <circle cx="5" cy="19" r="1"></circle>
+                        </svg></a></span></div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+    </script>
+</body>
+</html>
